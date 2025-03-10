@@ -7,4 +7,10 @@
       name: nginx
       state: latest
 
+  - name: denable
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes    
+
       
