@@ -8,7 +8,7 @@
       state: latest
 
   - name: systemctl enable nginx
-    system:
+    ansible.builtin.system:
       name: nginx
       state: started
       enabled: yes
