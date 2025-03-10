@@ -7,17 +7,4 @@
       name: nginx
       state: latest
 
-  - name: enable
-    ansible.builtin.system:
-      name: nginx
-      state: started
-      enabled: yes      
-
-
-
-  - name: rm -rf /usr/share/nginx/html/*
-    ansible.builtin.file:
-      path: /usr/share/nginx/html
-      state: absent    
-
       
