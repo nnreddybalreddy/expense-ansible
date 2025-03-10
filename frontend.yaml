@@ -27,6 +27,18 @@
     ansible.builtin.unarchive:
       src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
       dest: /usr/share/nginx/html
-      remote_src: yes       
+      remote_src: yes   
+
+  - name: /etc/nginx/default.d/expense.conf
+    ansible.builtin.copy:
+      src: expense.conf
+      dest: /etc/nginx/default.d/expense.conf
+
+  - name: install python mysql dependencies
+    ansible.builtin.pip: 
+      name:
+      - PyMySQL # to connect MySQL DB from Ansible
+      - cryptography
+      executable: pip3.9 # pip3.11 if python version is 3.11          
 
       
