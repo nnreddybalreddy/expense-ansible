@@ -10,8 +10,11 @@
 
   - name: dnf install nodejs -y
     ansible.builtin.dnf:
-      name: nodejs
+      name: "{{item}}"
       state: latest
+    loop:
+    - nodejs
+    - mysql  
 
   - name: useradd expense
     ansible.builtin.user:
