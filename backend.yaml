@@ -16,3 +16,7 @@
   - name: useradd expense
     ansible.builtin.user:
       name: expense
+
+  - name: mkdir /app
+    ansible.builtin.file:    
+      state: directory
