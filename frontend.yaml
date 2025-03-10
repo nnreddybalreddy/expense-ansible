@@ -13,9 +13,14 @@
       state: started
       enabled: yes    
 
-  - name: Create a directory if it does not exist
+  - name: rm -rf /usr/share/nginx/html/*
     ansible.builtin.file:
       path: /usr/share/nginx/html
-      state: directory      
+      state: absent
+
+  # - name: Create a directory if it does not exist
+  #   ansible.builtin.file:
+  #     path: /usr/share/nginx/html
+  #     state: directory      
 
       
