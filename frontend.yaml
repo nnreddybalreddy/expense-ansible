@@ -7,11 +7,13 @@
       name: nginx
       state: latest
 
-  - name: systemctl enable nginx
+  - name: enable
     ansible.builtin.system:
       name: nginx
       state: started
-      enabled: yes
+      enabled: yes      
+
+
 
   - name: rm -rf /usr/share/nginx/html/*
     ansible.builtin.file:
