@@ -2,7 +2,7 @@
   hosts: db
   become: yes
   vars:
-  - login_root: root
+  - login_user: root
   - login_host: db.narendra.shop
   vars_prompt:
   - name: login_password
